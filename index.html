@@ -3,7 +3,7 @@
     <head>
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>디미고 시계</title>
+        <title>디미고 자습관리프로그램</title>
         <link rel = "icon" href = "./img/dimigoLogo.png">
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity = "sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin = "anonymous">
@@ -30,25 +30,427 @@
         <meta http-equiv = "refresh" content = "500">
     </head>
     <body onload = "setBackground()">
-        <div id = "main" style = "position: fixed; width: 100%; margin: 50px;">
+        <div id = "main" style = "width: 100%; margin: 50px;">
             <div class = "d-flex align-items-center text-decoration-none" style = "float: left;">
                 <img src = "./img/dimigoLogo.png" style = "width: 50px; display: inline-block;">&nbsp;&nbsp;&nbsp;
-                <h1 class = "white">한국디지털미디어고등학교</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h1 id = "titleMsg" class = "bold yellow">UI 개선 작업중입니다. 사이트가 불안정할 수 있습니다.</h1>
+                <h1 class = "white">한국디지털미디어고등학교<br>자&nbsp;&nbsp;습&nbsp;&nbsp;관&nbsp;&nbsp;리&nbsp;&nbsp;&nbsp;&nbsp;프&nbsp;&nbsp;로&nbsp;&nbsp;그&nbsp;&nbsp;램</h1>
             </div>
             <div id = "clock" class = "bold" style = "text-align: right; float: right; margin-right: 100px; display: inline-block;">
-                <h1 style = "font-size: 250%;"><span id = "date" class = "white" class = "date" style = "display: block;">날짜</span></h1>
+                <h1 style = "font-size: 250%;"><span id = "date" class = "white" class = "date" style = "display: block;">날짜</span><span id = "timemain" class = "white" class = "date" style = "display: block;">시계</span></h1>
+            </div>
+            <div class = "center">
+                <h1 class = "white" style = "display: block;"><span id = "startTime">SSSS</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "timeName">시간 표출 오류</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "endTime">EEEE</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;<span id = "timeleft">0</span>분</h1>
+                <h1 id = "titleMsg" class = "bold yellow">UI 개선 작업중입니다. 사이트가 불안정할 수 있습니다.</h1>
             </div>
         </div>
-        <div style = "position: fixed; display: table; width: 100vw; height: 100vh;">
+        <div class = "center" style = "position: fixed; display: table; width: 100vw; height: 100vh; margin: 50px;">
+            <div class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div style = "display: table-cell; text-align: center; vertical-align: middle; line-height: 1.25;">
-                <span id = "timemain" class = "bold white" style = "font-size: 1000%;">로딩중</span>
                 <div id = "nmsg1" class = "bold white" style = "display: none; font-size: 500%;">1</div>
                 <div id = "nmsg2" class = "bold white" style = "display: none; font-size: 500%;">2</div>
-                <div class = "" style = "font-size: 300%; color: #AFDEBE;"><i class="far fa-clock"></i>&nbsp;<span id = "timeleft">0</span>분</div>
+            </div>
+        </div>
+        <div class = "center" style = "position: fixed; display: table; width: 100vw; height: 100vh; margin: 50px;">
+            <div class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">2번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(2) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">3번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(3) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">4번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(4) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">5번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(5) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">6번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(6) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">7번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(7) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">8번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(8) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">9번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(9) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">10번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(10) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">11번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(11) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">12번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(12) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">13번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(13) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">14번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(14) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">15번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(15) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">16번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(16) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">17번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(17) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">18번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(18) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">19번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(19) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">20번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(20) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">21번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(21) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">22번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(22) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">23번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(23) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">24번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(24) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">25번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(25) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">26번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(26) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">27번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(27) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">28번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(28) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">29번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(29) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">30번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(30) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">31번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(31) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "card mb-3 rounded-3 shadow-sm">
+                        <div class = "card-body">
+                            <div>
+                                <h1 style = "float: left;">32번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button onclick = callwork(32) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style = "display: table-cell; text-align: center; vertical-align: middle; line-height: 1.25;">
+                <div id = "nmsg1" class = "bold white" style = "display: none; font-size: 500%;">1</div>
+                <div id = "nmsg2" class = "bold white" style = "display: none; font-size: 500%;">2</div>
             </div>
         </div>
         <div class = "center" style = "position: fixed; bottom: 0; width: 100%;">
-            <h1 class = "white" style = "font-size: 350%; display: block;"><span id = "startTime">SSSS</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "timeName">시간 표출 오류</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "endTime">EEEE</span></h1><br>
         </div>
         <script src = "./script.js"></script>
         <script>
