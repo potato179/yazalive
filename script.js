@@ -1,4 +1,13 @@
-
+function onbodyload(){
+    let tablecnt = 32;
+    var h = math.floor(tablecnt/6) + 1;
+    for(var i = 1; i < h; i++){
+        document.getElementById("cards").write(`col${i}`);
+        for(var j = 1; j <= 6; j++){
+            document.getElementById(`col${i}`).write()
+        }
+    }
+}
 
 function setClock(){
     let dateDisplay;
