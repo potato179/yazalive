@@ -12,7 +12,7 @@ function onbodyload(){
             if((j-1)*6+i <= tablecnt){
                 document.getElementById(`col${i}`).innerHTML += `<div class = "card mb-3 rounded-3 shadow-sm">
                     <div class = "card-body">
-                        <h1 style = "float: left;">${(j-1)*6+i}번&nbsp;<small class = "green">재석</small></h1>
+                        <h1 style = "float: left;">${(j-1)*6+i}번&nbsp;<small class = "green">재실</small></h1>
                         <button onclick = callwork(${(j-1)*6+i}) class = "btn white" data-bs-toggle = "modal" data-bs-target = "#exampleModal" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
                     </div>
                 </div>`;
