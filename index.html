@@ -18,7 +18,7 @@
         <style>
             html, body{
                 font-family: 'Noto Sans KR', sans-serif;
-                background-image: url(./img/bg1.jpg);
+                background-image: url("");
                 background-repeat : no-repeat;
                 background-size : cover;
                 width: 100vw;
@@ -27,74 +27,60 @@
                 background-color: black;
             }
         </style>
-        <meta http-equiv = "refresh" content = "500">
     </head>
     <body onload = "onbodyload()">
+        <div class = "modal fade" id = "exampleModal" tabindex = "1" aria-labelledby = "exampleModalLabel" aria-hidden = "true">
+            <div class = "modal-dialog">
+                <div class = "modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel"><span id = "popupNumber"></span>번</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class = "modal-body" style = "line-height: 100%;">
+                        <div class = "btn-group">
+                            <a href = "#" class = "btn btn-outline-success disabled" aria-current = "page">들어오기</a>
+                            <a href = "#" class = "btn btn-success">재석</a>
+                        </div><br><br>
+                        <div class = "btn-group">
+                            <a href = "#" class = "btn btn-outline-primary disabled" aria-current = "page">잠시 나감</a>
+                            <a href = "#" class = "btn btn-primary">물</a>
+                            <a href = "#" class = "btn btn-primary">화장실</a>
+                            <a href = "#" class = "btn btn-primary">세탁</a>
+                            <a href = "#" class = "btn btn-primary">복도</a>
+                            <a href = "#" class = "btn btn-primary">상담</a>
+                        </div><br><br>
+                        <div class = "btn-group">
+                            <a href = "#" class = "btn btn-outline-warning disabled" aria-current = "page">교실 이동</a>
+                            <a href = "#" class = "btn btn-warning">방과후</a>
+                            <a href = "#" class = "btn btn-warning">창동</a>
+                            <a href = "#" class = "btn btn-warning">자동</a>
+                        </div><br><br>
+                        <div class = "btn-group">
+                            <a href = "#" class = "btn btn-outline-danger disabled" aria-current = "page">결격</a>
+                            <a href = "#" class = "btn btn-danger">외출</a>
+                            <a href = "#" class = "btn btn-danger">귀가</a>
+                        </div><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id = "main" style = "width: 100%; margin: 50px;">
             <div class = "d-flex align-items-center text-decoration-none" style = "float: left;">
                 <img src = "./img/dimigoLogo.png" style = "width: 50px; display: inline-block;">&nbsp;&nbsp;&nbsp;
-                <h1 class = "white">한국디지털미디어고등학교<br>자&nbsp;&nbsp;습&nbsp;&nbsp;관&nbsp;&nbsp;리&nbsp;&nbsp;&nbsp;&nbsp;프&nbsp;&nbsp;로&nbsp;&nbsp;그&nbsp;&nbsp;램</h1>
+                <h1 class = "white">한국디지털미디어고등학교<br>자습관리 프로그램 <span class = "gray">Beta</span></h1>
             </div>
             <div id = "clock" class = "bold" style = "text-align: right; float: right; margin-right: 100px; display: inline-block;">
                 <h1 style = "font-size: 250%;"><span id = "date" class = "white" class = "date" style = "display: block;">날짜</span><span id = "timemain" class = "white" class = "date" style = "display: block;">시계</span></h1>
             </div>
             <div class = "center">
-                <h1 class = "white" style = "display: block;"><span id = "startTime">SSSS</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "timeName">시간 표출 오류</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "endTime">EEEE</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;<span id = "timeleft">0</span>분</h1>
+                <h1 class = "white" style = "display: block;"><span id = "startTime">SSSS</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "timeName">시간 표출 오류</span>&nbsp;&nbsp;<i class = "cornflowerblue fas fa-angle-double-right"></i>&nbsp;&nbsp;<span id = "endTime">EEEE</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class = "far fa-clock"></i>&nbsp;<span id = "timeleft">0</span>분</h1>
                 <h1 id = "titleMsg" class = "bold yellow">UI 개선 작업중입니다. 사이트가 불안정할 수 있습니다.</h1>
             </div>
         </div>
         <div class = "center" style = "position: fixed; display: table; width: 100vw; height: 100vh; margin: 50px;">
             <div id = "cards" class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
-                <div id = "col1" class = "col">
-                    <div class = "card mb-3 rounded-3 shadow-sm">
-                        <div class = "card-body">
-                            <div>
-                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div id = "col1" class = "col">
-                    <div class = "card mb-3 rounded-3 shadow-sm">
-                        <div class = "card-body">
-                            <div>
-                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id = "cards" class = "row row-cols-1 row-cols-md-6 mb-6" style = "margin-right: 100px;">
-                <div id = "col1" class = "col">
-                    <div class = "card mb-3 rounded-3 shadow-sm">
-                        <div class = "card-body">
-                            <div>
-                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id = "col1" class = "col">
-                    <div class = "card mb-3 rounded-3 shadow-sm">
-                        <div class = "card-body">
-                            <div>
-                                <h1 style = "float: left;">1번&nbsp;<small class = "gray">재석</small></h1>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button onclick = callwork(1) class = "btn white" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <script src = "./script.js"></script>
-        <script>
-            function setBackground(){
-                let bgNum = Math.floor(Math.random() * 6);
-                document.html.style.backgroundImage = 'url("img/morning.jpg")';
-            }
-        </script>
     </body>
 </html>

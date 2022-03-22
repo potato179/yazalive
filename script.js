@@ -1,12 +1,29 @@
 function onbodyload(){
+    setClock();
+    setInterval(setClock, 1000);
+
     let tablecnt = 32;
-    var h = math.floor(tablecnt/6) + 1;
-    for(var i = 1; i < h; i++){
-        document.getElementById("cards").write(`col${i}`);
-        for(var j = 1; j <= 6; j++){
-            document.getElementById(`col${i}`).write()
+    var h = Math.floor(tablecnt/6) + 1;
+    console.log(h)
+    for(var i = 1; i <= 6; i++){
+        document.getElementById("cards").innerHTML += `<div id = "col${i}" class = "col"></div>`;
+        for(var j = 1; j <= h; j++){
+            console.log(6*(i-1)+j)
+            if((j-1)*6+i <= tablecnt){
+                document.getElementById(`col${i}`).innerHTML += `<div class = "card mb-3 rounded-3 shadow-sm">
+                    <div class = "card-body">
+                        <h1 style = "float: left;">${(j-1)*6+i}번&nbsp;<small class = "green">재석</small></h1>
+                        <button onclick = callwork(${(j-1)*6+i}) class = "btn white" data-bs-toggle = "modal" data-bs-target = "#exampleModal" style = "background-color: #ff0083; width: 50px; font-size: 25px; float: right;"><i class = "fas fa-exchange-alt"></i></button>
+                    </div>
+                </div>`;
+            }
         }
     }
+}
+
+function callwork(idnum){
+    console.log(idnum);
+    document.getElementById("popupNumber").innerHTML = idnum;
 }
 
 function setClock(){
@@ -536,8 +553,4 @@ function hidePopup(){
     $("#nmsg1").css("display", "none");
     $("#nmsg2").css("display", "none");
     $("#nmsg3").css("display", "none");
-}
-window.onload = function(){
-    setClock();
-    setInterval(setClock, 1000);
 }
